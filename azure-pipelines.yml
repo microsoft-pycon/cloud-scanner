@@ -16,13 +16,13 @@ strategy:
       vmImage: 'ubuntu-latest'
     Python37-Mac:
       python.version: '3.7'
-      imageName: 'macos-latest'
+      vmImage: 'macos-latest'
 
 steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
-  displayName: 'Use Python $(python.version) on $(imageName)'
+  displayName: 'Use Python $(python.version) on $(vmImage)'
 
 - script: |
     python -m pip install --upgrade pip
